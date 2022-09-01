@@ -4,5 +4,9 @@
   "projects": {
     "cook-it": "apps/cook-it",
     "cook-it-e2e": "apps/cook-it-e2e"
+  },
+  "@shematics/angular:component": {
+    "changeDetection": "onPush",
+    "style": "scss"
   }
 }
