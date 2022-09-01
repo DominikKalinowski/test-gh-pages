@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/cook-it",
         "index": "apps/cook-it/src/index.html",
@@ -13,8 +15,14 @@
         "polyfills": "apps/cook-it/src/polyfills.ts",
         "tsConfig": "apps/cook-it/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/cook-it/src/favicon.ico", "apps/cook-it/src/assets"],
-        "styles": ["apps/cook-it/src/styles.scss"],
+        "assets": [
+          "apps/cook-it/src/favicon.ico",
+          "apps/cook-it/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/cook-it/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -71,12 +79,17 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/cook-it/**/*.ts", "apps/cook-it/**/*.html"]
+        "lintFilePatterns": [
+          "apps/cook-it/**/*.ts",
+          "apps/cook-it/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/cook-it"],
+      "outputs": [
+        "coverage/apps/cook-it"
+      ],
       "options": {
         "jestConfig": "apps/cook-it/jest.config.ts",
         "passWithNoTests": true

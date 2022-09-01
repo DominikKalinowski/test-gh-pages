@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { TrialComponent } from './trial/trial.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidenavComponentModule } from '@cook-it/apps/libs/feature-recipe-list';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent, TrialComponent],
-  imports: [BrowserModule],
+  declarations: [AppComponent, NxWelcomeComponent],
+  imports: [BrowserModule, BrowserAnimationsModule, SidenavComponentModule],
   providers: [],
   bootstrap: [AppComponent],
 })

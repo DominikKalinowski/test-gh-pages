@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "apps-libs-feature-recipe-list": "libs/apps/libs/feature-recipe-list",
     "cook-it": "apps/cook-it",
     "cook-it-e2e": "apps/cook-it-e2e"
   },
