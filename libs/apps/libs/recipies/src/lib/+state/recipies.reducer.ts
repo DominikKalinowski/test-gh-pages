@@ -3,7 +3,6 @@ import { createReducer, on, Action } from '@ngrx/store';
 
 import * as RecipiesActions from './recipies.actions';
 import { RecipiesEntity } from './recipies.models';
-import { getRecipiesEntities } from './recipies.selectors';
 
 export const RECIPIES_FEATURE_KEY = 'recipies';
 

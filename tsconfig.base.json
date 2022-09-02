@@ -18,7 +18,8 @@
       "@cook-it/apps/libs/feature-recipe-list": [
         "libs/apps/libs/feature-recipe-list/src/index.ts"
       ],
-      "@cook-it/apps/libs/recipies": ["libs/apps/libs/recipies/src/index.ts"]
+      "@cook-it/apps/libs/recipies": ["libs/apps/libs/recipies/src/index.ts"],
+      "@cook-it/apps/libs/shell": ["libs/apps/libs/shell/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
