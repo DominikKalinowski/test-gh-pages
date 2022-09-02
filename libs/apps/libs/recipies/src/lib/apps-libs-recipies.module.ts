@@ -5,7 +5,6 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromRecipies from './+state/recipies.reducer';
 import { RecipiesEffects } from './+state/recipies.effects';
 import { HttpClientModule } from '@angular/common/http';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   imports: [
