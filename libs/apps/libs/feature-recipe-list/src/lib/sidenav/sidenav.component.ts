@@ -1,5 +1,4 @@
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 
 import {
   ChangeDetectionStrategy,
@@ -8,7 +7,13 @@ import {
   NgModule,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatOption } from '@angular/material/core';
+import { Store, StoreModule } from '@ngrx/store';
+import { RecipiesState, RecipiesEntity, initRecipies, getAllRecipies } from '@cook-it/apps/libs/recipies';
+import { Observable } from 'rxjs';
+import * as fromRecipies from '@cook-it/apps/libs/recipies';
+import { EffectsModule } from '@ngrx/effects';
+import { RecipiesEffects } from 'libs/apps/libs/recipies/src/lib/+state/recipies.effects';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'cook-it-sidenav',
@@ -17,9 +22,15 @@ import { MatOption } from '@angular/material/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidenavComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  recipies$!: Observable<RecipiesEntity[]>;
+
+  constructor(private store: Store<RecipiesState>) {}
+
+  ngOnInit(): void {
+    this.store.dispatch(initRecipies());
+    this.recipies$ = this.store.select<RecipiesEntity[]>(getAllRecipies);
+  }
 }
 
 const materialModules = [
@@ -28,7 +39,17 @@ const materialModules = [
 
 
 @NgModule({
-  imports: [CommonModule, ...materialModules],
+  imports: [CommonModule, 
+    ...materialModules,
+    StoreModule.forRoot({}), 
+    StoreModule.forFeature(
+      fromRecipies.RECIPIES_FEATURE_KEY,
+      fromRecipies.recipiesReducer
+    ),
+    EffectsModule.forRoot(), 
+    HttpClientModule,
+    EffectsModule.forFeature([RecipiesEffects]),
+  ],
   declarations: [SidenavComponent],
   exports: [SidenavComponent],
 })
