@@ -2,11 +2,11 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "apps-libs-feature-recipe-list": "libs/apps/libs/feature-recipe-list",
-    "apps-libs-recipies": "libs/apps/libs/recipies",
-    "apps-libs-shell": "libs/apps/libs/shell",
     "cook-it": "apps/cook-it",
-    "cook-it-e2e": "apps/cook-it-e2e"
+    "cook-it-e2e": "apps/cook-it-e2e",
+    "feature-recipe-list": "libs/feature-recipe-list",
+    "recipies": "libs/recipies",
+    "shell": "libs/shell"
   },
   "@shematics/angular:component": {
     "changeDetection": "onPush",

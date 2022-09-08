@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidenavComponentModule } from '@cook-it/apps/libs/feature-recipe-list';
+import { SidenavComponentModule } from '@cook-it/feature-recipe-list';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import * as shell from '@cook-it/apps/libs/shell';
+import * as shell from '@cook-it/shell';
 import { RouterModule } from '@angular/router';
 
 const environment = {
@@ -20,7 +20,7 @@ const environment = {
     BrowserModule,
     BrowserAnimationsModule,
     SidenavComponentModule,
-    shell.AppsLibsShellModule,
+    shell.ShellModule,
     RouterModule,
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
   ],
