@@ -17,6 +17,7 @@ import {
 import { Observable } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { provideComponentStore } from '@ngrx/component-store';
+import { Route, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'cook-it-sidenav',
@@ -30,13 +31,17 @@ import { provideComponentStore } from '@ngrx/component-store';
 export class SidenavComponent {
   recipies$: Observable<RecipiesEntity[]> = this.store.select<RecipiesEntity[]>(getAllRecipies);
 
-  constructor(private store: Store<RecipiesState>) {}
+  constructor(private store: Store<RecipiesState>, private recipiesStore: RecipiesStore) {}
 }
 
 const materialModules = [MatSidenavModule];
 
+ const routes: Route[] = [
+  { path: '', component: SidenavComponent },
+];
+
 @NgModule({
-  imports: [CommonModule, ...materialModules, RecipiesModule, HttpClientModule],
+  imports: [CommonModule, ...materialModules, RecipiesModule, HttpClientModule, RouterModule.forChild(routes)],
   declarations: [SidenavComponent],
   exports: [SidenavComponent],
 })

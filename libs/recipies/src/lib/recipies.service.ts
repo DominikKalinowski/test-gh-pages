@@ -13,8 +13,6 @@ export class RecipiesService {
   baseUrl = 'https://ml-app-valueadd.herokuapp.com/recipes';
 
   public getRecipies(): Observable<RecipiesEntity[]> {
-    return this.http
-      .get<RecipiesEntity[]>(this.baseUrl)
-      .pipe(tap((value) => console.log(value)));
+    return this.http.get<RecipiesEntity[]>(this.baseUrl);
   }
 }

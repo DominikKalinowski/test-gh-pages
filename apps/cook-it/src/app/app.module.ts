@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponentModule } from '@cook-it/feature-recipe-list';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ShellModule } from '@cook-it/shell';
@@ -11,13 +9,10 @@ import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     SidenavComponentModule,
     ShellModule,
     RouterModule,
