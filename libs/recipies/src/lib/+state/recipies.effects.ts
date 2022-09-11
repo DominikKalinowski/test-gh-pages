@@ -17,9 +17,8 @@ export class RecipiesEffects {
       ofType(RecipiesActions.initRecipies),
       switchMap(() => {
         return this.recipiesService.getRecipies().pipe(
-          tap((val) => console.log(val)),
           map((recipies) => {
-            return RecipiesActions.loadRecipiesSuccess({ recipies: recipies });
+            return RecipiesActions.loadRecipiesSuccess({ recipies });
           }),
           catchError((error) => {
             return of(RecipiesActions.loadRecipiesFailure(error));

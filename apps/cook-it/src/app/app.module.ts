@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponentModule } from '@cook-it/feature-recipe-list';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import * as shell from '@cook-it/shell';
+import { ShellModule } from '@cook-it/shell';
 import { RouterModule } from '@angular/router';
 
 const environment = {
@@ -19,7 +19,7 @@ const environment = {
     BrowserModule,
     BrowserAnimationsModule,
     SidenavComponentModule,
-    shell.ShellModule,
+    ShellModule,
     RouterModule,
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
   ],

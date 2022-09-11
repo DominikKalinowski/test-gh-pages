@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { RecipiesEntity } from './recipies.models';
 
-export const initRecipies = createAction('[Recipies Page] Init');
+export const initRecipies = createAction('[Recipies/API] Load Recipies');
 
 export const loadRecipiesSuccess = createAction(
   '[Recipies/API] Load Recipies Success',

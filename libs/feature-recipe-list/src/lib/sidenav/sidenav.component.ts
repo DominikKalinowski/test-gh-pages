@@ -13,11 +13,11 @@ import {
   RecipiesEntity,
   initRecipies,
   getAllRecipies,
+  RecipiesModule,
 } from '@cook-it/recipies';
 import { Observable } from 'rxjs';
-import * as fromRecipies from '@cook-it/recipies';
 import { EffectsModule } from '@ngrx/effects';
-import * as recipiesEffects from 'libs/apps/libs/recipies/src/lib/+state/recipies.effects';
+import * as recipiesEffects from 'libs/recipies/src/lib/+state/recipies.effects';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -43,11 +43,7 @@ const materialModules = [MatSidenavModule];
   imports: [
     CommonModule,
     ...materialModules,
-    StoreModule.forRoot({}),
-    StoreModule.forFeature(
-      fromRecipies.RECIPIES_FEATURE_KEY,
-      fromRecipies.recipiesReducer
-    ),
+    RecipiesModule,
     EffectsModule.forRoot(),
     HttpClientModule,
     EffectsModule.forFeature([recipiesEffects.RecipiesEffects]),
