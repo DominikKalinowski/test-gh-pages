@@ -7,7 +7,7 @@ import {
   NgModule,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Store, StoreModule } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import {
   RecipiesState,
   RecipiesEntity,
@@ -16,8 +16,6 @@ import {
   RecipiesModule,
 } from '@cook-it/recipies';
 import { Observable } from 'rxjs';
-import { EffectsModule } from '@ngrx/effects';
-import * as recipiesEffects from 'libs/recipies/src/lib/+state/recipies.effects';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -40,14 +38,7 @@ export class SidenavComponent implements OnInit {
 const materialModules = [MatSidenavModule];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ...materialModules,
-    RecipiesModule,
-    EffectsModule.forRoot(),
-    HttpClientModule,
-    EffectsModule.forFeature([recipiesEffects.RecipiesEffects]),
-  ],
+  imports: [CommonModule, ...materialModules, RecipiesModule, HttpClientModule],
   declarations: [SidenavComponent],
   exports: [SidenavComponent],
 })
