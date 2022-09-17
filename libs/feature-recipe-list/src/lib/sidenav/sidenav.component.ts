@@ -1,4 +1,4 @@
-import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import {
   ChangeDetectionStrategy,
