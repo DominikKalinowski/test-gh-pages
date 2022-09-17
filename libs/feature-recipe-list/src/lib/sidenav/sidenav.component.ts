@@ -1,4 +1,4 @@
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 
 import {
   ChangeDetectionStrategy,
@@ -12,11 +12,9 @@ import {
   RecipiesEntity,
   getAllRecipies,
   RecipiesModule,
-  RecipiesStore,
 } from '@cook-it/recipies';
 import { Observable } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
-import { provideComponentStore } from '@ngrx/component-store';
 import { Route, RouterModule } from '@angular/router';
 
 @Component({
@@ -24,20 +22,17 @@ import { Route, RouterModule } from '@angular/router';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    provideComponentStore(RecipiesStore)
-  ]
 })
 export class SidenavComponent {
   recipies$: Observable<RecipiesEntity[]> = this.store.select<RecipiesEntity[]>(getAllRecipies);
 
-  constructor(private store: Store<RecipiesState>, private recipiesStore: RecipiesStore) {}
+  constructor(private store: Store<RecipiesState>) {}
 }
 
 const materialModules = [MatSidenavModule];
 
  const routes: Route[] = [
-  { path: '', component: SidenavComponent },
+  { path: 'recipe-list', component: SidenavComponent },
 ];
 
 @NgModule({

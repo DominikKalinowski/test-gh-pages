@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { createEffect, Actions, ofType } from '@ngrx/effects';
+import { createEffect, Actions, ofType, OnInitEffects } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
 import { catchError, map, of, switchMap } from 'rxjs';
 import { RecipiesService } from '../recipies.service';
 
 import * as RecipiesActions from './recipies.actions';
 
 @Injectable()
-export class RecipiesEffects {
+export class RecipiesEffects implements OnInitEffects {
   constructor(
     private readonly actions$: Actions,
     private recipiesService: RecipiesService
@@ -27,4 +28,8 @@ export class RecipiesEffects {
       })
     );
   });
+
+  ngrxOnInitEffects(): Action {
+    return RecipiesActions.initRecipies();
+  }
 }
