@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/recipies/shell/src",
+  "prefix": "cook-it",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/recipies/shell"],
+      "options": {
+        "jestConfig": "libs/recipies/shell/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/recipies/shell/**/*.ts",
+          "libs/recipies/shell/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["type: shell", "scope: recipes"]
+}

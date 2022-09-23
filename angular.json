@@ -4,12 +4,13 @@
   "projects": {
     "cook-it": "apps/cook-it",
     "cook-it-e2e": "apps/cook-it-e2e",
-    "feature-recipe-list": "libs/feature-recipe-list",
     "recipies": "libs/recipies",
-    "shell": "libs/shell"
+    "recipies-feature-recipe-list": "libs/recipies/feature-recipe-list",
+    "recipies-shell": "libs/recipies/shell"
   },
   "@shematics/angular:component": {
     "changeDetection": "onPush",
-    "style": "scss"
+    "style": "scss",
+    "standalone": "true"
   }
 }

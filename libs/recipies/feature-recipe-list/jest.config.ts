@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
-  displayName: 'feature-recipe-list',
-  preset: '../../jest.preset.js',
+  displayName: 'recipies-feature-recipe-list',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/libs/feature-recipe-list',
+  coverageDirectory: '../../../coverage/libs/recipies/feature-recipe-list',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

@@ -15,9 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cook-it/feature-recipe-list": ["libs/feature-recipe-list/src/index.ts"],
       "@cook-it/recipies": ["libs/recipies/src/index.ts"],
-      "@cook-it/shell": ["libs/shell/src/index.ts"]
+      "@cook-it/recipies-feature-recipe-list": [
+        "libs/recipies/feature-recipe-list/src/index.ts"
+      ],
+      "@cook-it/recipies-shell": ["libs/recipies/shell/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

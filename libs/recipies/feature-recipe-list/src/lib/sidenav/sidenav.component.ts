@@ -1,10 +1,6 @@
 import { MatSidenavModule } from '@angular/material/sidenav';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  NgModule,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import {
@@ -24,19 +20,24 @@ import { Route, RouterModule } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidenavComponent {
-  recipies$: Observable<RecipiesEntity[]> = this.store.select<RecipiesEntity[]>(getAllRecipies);
+  recipies$: Observable<RecipiesEntity[]> =
+    this.store.select<RecipiesEntity[]>(getAllRecipies);
 
   constructor(private store: Store<RecipiesState>) {}
 }
 
 const materialModules = [MatSidenavModule];
 
- const routes: Route[] = [
-  { path: 'recipe-list', component: SidenavComponent },
-];
+const routes: Route[] = [{ path: 'recipe-list', component: SidenavComponent }];
 
 @NgModule({
-  imports: [CommonModule, ...materialModules, RecipiesModule, HttpClientModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    ...materialModules,
+    RecipiesModule,
+    HttpClientModule,
+    RouterModule.forChild(routes),
+  ],
   declarations: [SidenavComponent],
   exports: [SidenavComponent],
 })
