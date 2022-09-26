@@ -4,9 +4,9 @@
   "projects": {
     "cook-it": "apps/cook-it",
     "cook-it-e2e": "apps/cook-it-e2e",
-    "recipies": "libs/recipies",
-    "recipies-feature-recipe-list": "libs/recipies/feature-recipe-list",
-    "recipies-shell": "libs/recipies/shell"
+    "data-access": "libs/recipies/data-access",
+    "feature-recipe-list": "libs/recipies/feature-recipe-list",
+    "shell": "libs/recipies/shell"
   },
   "@shematics/angular:component": {
     "changeDetection": "onPush",

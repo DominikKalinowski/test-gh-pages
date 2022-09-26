@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
-  displayName: 'recipies',
-  preset: '../../jest.preset.js',
+  displayName: 'data-access',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/libs/recipies',
+  coverageDirectory: '../../../coverage/libs/recipies/data-access',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

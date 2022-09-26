@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'recipies-feature-recipe-list',
+  displayName: 'feature-recipe-list',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
