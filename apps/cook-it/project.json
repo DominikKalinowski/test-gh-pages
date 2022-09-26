@@ -14,7 +14,10 @@
         "tsConfig": "apps/cook-it/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/cook-it/src/favicon.ico", "apps/cook-it/src/assets"],
-        "styles": ["apps/cook-it/src/styles.scss"],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/cook-it/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {

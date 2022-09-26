@@ -3,6 +3,14 @@
   "version": 2,
   "projects": {
     "cook-it": "apps/cook-it",
-    "cook-it-e2e": "apps/cook-it-e2e"
+    "cook-it-e2e": "apps/cook-it-e2e",
+    "recipies-data-access": "libs/recipies/data-access",
+    "recipies-feature-recipe-list": "libs/recipies/feature-recipe-list",
+    "recipies-shell": "libs/recipies/shell"
+  },
+  "@shematics/angular:component": {
+    "changeDetection": "onPush",
+    "style": "scss",
+    "standalone": "true"
   }
 }
