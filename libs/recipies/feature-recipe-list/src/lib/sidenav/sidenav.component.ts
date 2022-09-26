@@ -7,7 +7,7 @@ import {
   RecipiesState,
   RecipiesEntity,
   getAllRecipies,
-  DataAccessModule,
+  RecipiesDataAccessModule,
 } from '@cook-it/recipies/data-access';
 import { Observable } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
@@ -36,7 +36,7 @@ const routes: Route[] = [{ path: 'recipe-list', component: SidenavComponent }];
     ...materialModules,
     HttpClientModule,
     RouterModule.forChild(routes),
-    DataAccessModule
+    RecipiesDataAccessModule
   ],
   declarations: [SidenavComponent],
   exports: [SidenavComponent],

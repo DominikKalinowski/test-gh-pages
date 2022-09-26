@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'shell',
+  displayName: 'recipies-shell',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
