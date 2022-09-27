@@ -1,4 +1,5 @@
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,6 +13,7 @@ import {
 import { Observable } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { Route, RouterModule } from '@angular/router';
+import { RecipiesUiRecipiesSidebarModule } from '@cook-it/recipies/ui-recipies-sidebar';
 
 @Component({
   selector: 'cook-it-sidenav',
@@ -26,7 +28,7 @@ export class SidenavComponent {
   constructor(private store: Store<RecipiesState>) {}
 }
 
-const materialModules = [MatSidenavModule];
+const materialModules = [MatSidenavModule, MatListModule];
 
 const routes: Route[] = [{ path: 'recipe-list', component: SidenavComponent }];
 
@@ -36,7 +38,8 @@ const routes: Route[] = [{ path: 'recipe-list', component: SidenavComponent }];
     ...materialModules,
     HttpClientModule,
     RouterModule.forChild(routes),
-    RecipiesDataAccessModule
+    RecipiesDataAccessModule,
+    RecipiesUiRecipiesSidebarModule
   ],
   declarations: [SidenavComponent],
   exports: [SidenavComponent],

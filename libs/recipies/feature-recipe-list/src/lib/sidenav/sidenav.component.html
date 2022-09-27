@@ -1,8 +1,17 @@
 <mat-drawer-container class="container">
-  <mat-drawer mode="side" opened >
-    <pre>
-        {{ recipies$ | async | json }}
-    </pre>
+  <mat-drawer mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item class="wrapper" *ngFor="let recipe of recipies$ | async">
+        <div class="item">
+          <cook-it-recipe-item
+          [imagePath]="recipe.images.preview"
+          [title]="recipe.name"
+          [description]="recipe.description"
+          ></cook-it-recipe-item>
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
   </mat-drawer>
-  <mat-drawer-content>Main content</mat-drawer-content>
+  <mat-drawer-content>
+  </mat-drawer-content>
 </mat-drawer-container>
