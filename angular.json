@@ -6,7 +6,8 @@
     "cook-it-e2e": "apps/cook-it-e2e",
     "recipies-data-access": "libs/recipies/data-access",
     "recipies-feature-recipe-list": "libs/recipies/feature-recipe-list",
-    "recipies-shell": "libs/recipies/shell"
+    "recipies-shell": "libs/recipies/shell",
+    "recipies-ui-recipies-sidebar": "libs/recipies/ui-recipies-sidebar"
   },
   "@shematics/angular:component": {
     "changeDetection": "onPush",
